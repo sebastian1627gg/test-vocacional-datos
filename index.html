@@ -11,7 +11,10 @@
     .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
     .form-group { margin-bottom: 15px; }
     .form-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #34495e; }
-    .form-group input[type="text"], .form-group input[type="email"], .form-group select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 15px; box-sizing: border-box; }
+    .form-group input[type="text"], 
+    .form-group input[type="email"], 
+    .form-group select,
+    .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 15px; box-sizing: border-box; font-family: inherit; }
     .checkbox-group { display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; font-size: 14px; }
     .checkbox-group input { margin-top: 4px; }
     .btn-container { display: flex; gap: 10px; margin-top: 20px; }
@@ -19,21 +22,24 @@
     button:hover { background: #2980b9; }
     button.secondary { background: #95a5a6; }
     button.secondary:hover { background: #7f8c8d; }
+    button.success { background: #27ae60; }
+    button.success:hover { background: #219150; }
     .question { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
     .question p { font-weight: bold; font-size: 17px; margin-bottom: 10px; color: #2c3e50; }
     .option { display: block; margin: 8px 0; cursor: pointer; }
     .option input { margin-right: 10px; }
     #result { line-height: 1.6; }
     .role-title { font-size: 20px; font-weight: bold; color: #27ae60; margin-bottom: 10px; }
+    .char-counter { font-size: 12px; color: #7f8c8d; text-align: right; margin-top: 4px; }
   </style>
 </head>
 <body>
 
-  <h1>Test Vocacional: Roles de Datos</h1>
+  <h1>Test Vocacional</h1>
 
-  <!-- SECCIÓN 1: FORMULARIO DE DATOS PERSONALES -->
+  <!-- SECCIÓN 1: DATOS PERSONALES -->
   <div class="card" id="step-form">
-    <h2>Paso 1: Tus datos personales y perfil</h2>
+    <h2>Datos personales</h2>
     
     <div class="form-group">
       <label for="nombre">Nombre completo:</label>
@@ -60,8 +66,11 @@
       <label for="edad">Rango de edad:</label>
       <select id="edad" required>
         <option value="">Selecciona una opción...</option>
-        <option value="Menor de edad">Menor de edad</option>
-        <option value="Mayor de edad">Mayor de edad</option>
+        <option value="Menos de 18 años">Menos de 18 años</option>
+        <option value="18 a 24 años">18 a 24 años</option>
+        <option value="25 a 34 años">25 a 34 años</option>
+        <option value="35 a 44 años">35 a 44 años</option>
+        <option value="45 años o más">45 años o más</option>
       </select>
     </div>
 
@@ -86,6 +95,12 @@
       </select>
     </div>
 
+    <div class="form-group">
+      <label for="sobre_ti">Cuéntanos más sobre ti y tu experiencia:</label>
+      <textarea id="sobre_ti" rows="3" maxlength="300" placeholder="Escribe brevemente sobre tus metas, intereses o trayectoria profesional..." oninput="actualizarContador()"></textarea>
+      <div class="char-counter"><span id="counter">0</span> / 300 caracteres</div>
+    </div>
+
     <div class="checkbox-group">
       <input type="checkbox" id="autorizacion" required>
       <label for="autorizacion">Autorizo el tratamiento de mis datos personales con fines estadísticos y de orientación vocacional (Obligatorio).</label>
@@ -96,7 +111,7 @@
 
   <!-- SECCIÓN 2: TEST VOCACIONAL -->
   <div class="card" id="step-test" style="display:none;">
-    <h2>Paso 2: Resuelve las preguntas</h2>
+    <h2>Resuelve las preguntas</h2>
     <div id="test-container"></div>
     <div class="btn-container">
       <button class="secondary" onclick="regresarAlFormulario()">Retroceder</button>
@@ -108,6 +123,17 @@
   <div class="card" id="result-container" style="display:none;">
     <h2>Resultados: ¿Hacia dónde apunta tu brújula?</h2>
     <div id="result"></div>
+    <div class="btn-container">
+      <button class="secondary" onclick="reiniciarTest()">Mandar otra respuesta</button>
+      <button class="success" onclick="finalizarTest()">Finalizar</button>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4: PANTALLA DE AGRADECIMIENTO AL FINALIZAR -->
+  <div class="card" id="thanks-container" style="display:none; text-align: center;">
+    <h2>¡Gracias por realizar el Test Vocacional!</h2>
+    <p>Tus respuestas se han registrado con éxito. Esperamos que este resultado te oriente en tu camino en el mundo de los datos.</p>
+    <button style="max-width: 250px; margin: 15px auto 0 auto;" onclick="reiniciarTest()">Realizar el test de nuevo</button>
   </div>
 
   <script>
@@ -159,6 +185,12 @@
       }
     ];
 
+    function actualizarContador() {
+      const input = document.getElementById('sobre_ti');
+      const counter = document.getElementById('counter');
+      counter.innerText = input.value.length;
+    }
+
     function renderizarTest() {
       let html = '';
       preguntas.forEach((q) => {
@@ -181,7 +213,7 @@
       const autorizacion = document.getElementById('autorizacion').checked;
 
       if (!nombre || !correo || !genero || !edad || !perfil || !experiencia) {
-        alert("Por favor completa todos los campos del formulario antes de continuar.");
+        alert("Por favor completa todos los campos obligatorios del formulario.");
         return;
       }
 
@@ -190,7 +222,6 @@
         return;
       }
 
-      // Ocultar formulario, mostrar test
       document.getElementById('step-form').style.display = 'none';
       document.getElementById('step-test').style.display = 'block';
       renderizarTest();
@@ -239,6 +270,32 @@
       document.getElementById('step-test').style.display = 'none';
       document.getElementById('result-container').style.display = 'block';
       document.getElementById('result').innerHTML = textoResultado;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function reiniciarTest() {
+      // Limpiar campos de formulario
+      document.getElementById('nombre').value = '';
+      document.getElementById('correo').value = '';
+      document.getElementById('genero').value = '';
+      document.getElementById('edad').value = '';
+      document.getElementById('perfil').value = '';
+      document.getElementById('experiencia').value = '';
+      document.getElementById('sobre_ti').value = '';
+      document.getElementById('autorizacion').checked = false;
+      document.getElementById('counter').innerText = '0';
+
+      // Ocultar otras pantallas y mostrar el formulario inicial
+      document.getElementById('result-container').style.display = 'none';
+      document.getElementById('thanks-container').style.display = 'none';
+      document.getElementById('step-test').style.display = 'none';
+      document.getElementById('step-form').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function finalizarTest() {
+      document.getElementById('result-container').style.display = 'none';
+      document.getElementById('thanks-container').style.display = 'block';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
