@@ -137,6 +137,9 @@
   </div>
 
   <script>
+    // URL de conexión con Google Sheets
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz3cZ9BcbhSSZ9qCLWnfD9KUt3t7hUrmdT02wDtEJO3zXR0dI9qlNFKjC-Rn8UfaIpX/exec";
+
     const preguntas = [
       {
         id: 1,
@@ -255,17 +258,42 @@
       if (conteo["🔮"] > conteo[ganador]) ganador = "🔮";
       if (conteo["🎨"] > conteo[ganador]) ganador = "🎨";
 
+      let rolResultado = "";
       let textoResultado = "";
+
       if (ganador === "⚙️") {
+        rolResultado = "Ingeniero de Datos";
         textoResultado = `<div class="role-title">⚙️ Tu perfil se asocia más a un Ingeniero de Datos</div>
         <p>Tienes mente de arquitecto. Te incomoda lo manual y disfrutas creando estructuras y conexiones para que la información fluya sin romperse. Eres el candidato ideal para aprender a automatizar procesos, usar lenguajes que construyen soluciones por detrás (como Python) y gestionar los grandes almacenes donde vive la información (bases de datos).</p>`;
       } else if (ganador === "🔮") {
+        rolResultado = "Científico de Datos";
         textoResultado = `<div class="role-title">🔮 Tu perfil se asocia más a un Científico de Datos</div>
         <p>Tienes alma de investigador y te mueve la lógica. No te conformas con ver lo que pasó; quieres saber por qué y qué pasará mañana. Tu curiosidad es perfecta para entrar al mundo de los algoritmos, donde usarás matemáticas y programación para enseñarle a los sistemas a encontrar patrones y predecir el futuro (Machine Learning).</p>`;
       } else {
+        rolResultado = "Analista de Datos";
         textoResultado = `<div class="role-title">🎨 Tu perfil se asocia más a un Analista de Datos</div>
         <p>Eres un traductor nato y un comunicador visual. Tienes la habilidad de tomar lo complejo y volverlo simple y útil para tomar decisiones. Tu camino brilla en dominar herramientas que transforman números aburridos en tableros interactivos (como Power BI o Tableau) y en saber hacerle las preguntas correctas a la información.</p>`;
       }
+
+      // Prepara los datos a enviar a Google Sheets
+      const datos = {
+        nombre: document.getElementById('nombre').value.trim(),
+        correo: document.getElementById('correo').value.trim(),
+        genero: document.getElementById('genero').value,
+        edad: document.getElementById('edad').value,
+        perfil: document.getElementById('perfil').value,
+        experiencia: document.getElementById('experiencia').value,
+        sobre_ti: document.getElementById('sobre_ti').value.trim(),
+        resultado: rolResultado
+      };
+
+      // Envía la información a Google Sheets
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(datos)
+      }).catch(error => console.error('Error al enviar los datos:', error));
 
       document.getElementById('step-test').style.display = 'none';
       document.getElementById('result-container').style.display = 'block';
