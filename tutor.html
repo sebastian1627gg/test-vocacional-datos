@@ -103,7 +103,7 @@
   </div>
 
   <script>
-    const TUTOR_SCRIPT_URL = "PEGA_AQUI_TU_NUEVA_URL_DE_APPS_SCRIPT";
+    const TUTOR_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEKo92OsT7R02T62Oo56cQcLCoDtpigNxOJqq46nUG5mKlVhrrLDRcIMa3u4IfjEvxGA/exec";
 
     function actualizarContador() {
       const input = document.getElementById('interes');
@@ -142,7 +142,7 @@
         autorizacion: "Aceptado"
       };
 
-      if (TUTOR_SCRIPT_URL && TUTOR_SCRIPT_URL !== "PEGA_AQUI_TU_NUEVA_URL_DE_APPS_SCRIPT") {
+      if (TUTOR_SCRIPT_URL) {
         fetch(TUTOR_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
