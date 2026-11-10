@@ -32,6 +32,28 @@ body {
   margin-bottom: 24px;
 }
 
+/* Etiqueta superior: línea fina + texto espaciado en el verde de los botones */
+.tag-title {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 28px 0;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #2fb350; /* Verde de .btn-green */
+}
+
+.tag-line {
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background-color: #2fb350;
+  flex-shrink: 0;
+}
+
 /* Letra del título principal (Font-black 900 de Python Colombia) */
 h1 {
   font-family: 'Titillium Web', sans-serif;
