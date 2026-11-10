@@ -59,11 +59,6 @@ h1 {
   display: inline-block;
   flex-shrink: 0;
 }
-  width: 8px; /* h-2 = 8px */
-  height: 8px; /* w-2 = 8px */
-  border-radius: 0 !important; /* Cuadrados sin bordes redondos */
-  display: inline-block;
-}
 
 /* Colores exactos de Python Colombia */
 .sq-red    { background-color: #e24329; } /* bg-accent-red */
