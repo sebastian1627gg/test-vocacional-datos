@@ -14,7 +14,6 @@
 
   <!-- ENCABEZADO ESTILO PYTHON COLOMBIA -->
   <div class="title-header">
-    <div class="pre-title pre-title-orange">—— TEST</div>
     <h1>Test Vocacional</h1>
     <div class="title-squares">
       <span class="sq sq-yellow"></span>
@@ -26,14 +25,13 @@
     </div>
   </div>
 
-  <!-- BOTÓN PARA IR AL FORMULARIO DE TUTORES -->
-  <div style="margin-bottom: 28px;">
-    <button onclick="window.location.href='tuto.html'" class="btn-tutor" style="max-width: 340px;">Inscribirme como Tutor Voluntario</button>
+  <!-- BOTÓN PARA IR AL FORMULARIO DE TUTORES (CENTRADO) -->
+  <div style="text-align: center; margin-bottom: 32px;">
+    <button onclick="window.location.href='tuto.html'" class="btn-yellow" style="max-width: 360px; margin: 0 auto; display: inline-block;">Inscribirme como Tutor Voluntario</button>
   </div>
 
   <!-- SECCIÓN 1: DATOS PERSONALES -->
   <div class="card" id="step-form">
-    <div class="pre-title pre-title-green">—— PASO 1</div>
     <h2>Datos personales</h2>
     
     <div class="form-group">
@@ -101,37 +99,36 @@
       <label for="autorizacion">Autorizo el tratamiento de mis datos personales con fines estadísticos y de orientación vocacional (Obligatorio).</label>
     </div>
 
-    <button onclick="irAlTest()" class="btn-yellow" style="margin-top: 24px;">Siguiente</button>
+    <button onclick="irAlTest()" class="btn-green" style="margin-top: 24px;">Siguiente</button>
   </div>
 
   <!-- SECCIÓN 2: TEST VOCACIONAL -->
   <div class="card" id="step-test" style="display:none;">
-    <div class="pre-title pre-title-green">—— PASO 2</div>
     <h2>Resuelve las preguntas</h2>
     <div id="test-container"></div>
     <div class="btn-container">
-      <button class="secondary" onclick="regresarAlFormulario()">Retroceder</button>
+      <button class="btn-yellow" onclick="regresarAlFormulario()">Retroceder</button>
       <button class="btn-green" onclick="calcularResultado()">Enviar Respuestas y Ver Resultado</button>
     </div>
   </div>
 
   <!-- SECCIÓN 3: RESULTADOS -->
   <div class="card" id="result-container" style="display:none;">
-    <div class="pre-title pre-title-orange">—— EVALUACIÓN</div>
     <h2>Resultados: ¿Hacia dónde apunta tu brújula?</h2>
     <div id="result"></div>
     <div class="btn-container">
-      <button class="secondary" onclick="reiniciarTest()">Mandar otra respuesta</button>
+      <button class="btn-yellow" onclick="reiniciarTest()">Mandar otra respuesta</button>
       <button class="btn-green" onclick="finalizarTest()">Finalizar</button>
     </div>
   </div>
 
   <!-- SECCIÓN 4: PANTALLA DE AGRADECIMIENTO AL FINALIZAR -->
   <div class="card" id="thanks-container" style="display:none; text-align: left;">
-    <div class="pre-title pre-title-green">—— FINALIZADO</div>
     <h2>¡Gracias por realizar el Test Vocacional!</h2>
     <p>Tus respuestas se han registrado con éxito. Esperamos que este resultado te oriente en tu camino en el mundo de los datos.</p>
-    <button class="btn-yellow" style="max-width: 280px; margin-top: 20px;" onclick="reiniciarTest()">Realizar el test de nuevo</button>
+    <div style="text-align: center; margin-top: 24px;">
+      <button class="btn-yellow" style="max-width: 320px; margin: 0 auto; display: inline-block;" onclick="reiniciarTest()">Realizar el test de nuevo</button>
+    </div>
   </div>
 
   <script src="js/main.js"></script>
