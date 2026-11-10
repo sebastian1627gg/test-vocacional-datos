@@ -1,0 +1,243 @@
+/* ==========================================================================
+   Importación de Fuentes (Google Fonts: Inter)
+   Inspirado en el diseño moderno de Python Colombia (python.org.co)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   Estilos Generales y Tema Oscuro (Python Colombia)
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #000000; /* Fondo negro */
+  color: #e5e7eb; /* Texto claro de alta legibilidad */
+  line-height: 1.6;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.025em;
+  margin-bottom: 24px;
+}
+
+h2 {
+  color: #f9fafb;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: -0.015em;
+}
+
+.card {
+  background-color: #121214; /* Superficie de tarjeta oscura */
+  border: 1px solid #27272a; /* Borde sutil */
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #d1d5db;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="email"], 
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #18181b; /* Fondo oscuro de campos */
+  color: #f9fafb;
+  border: 1px solid #3f3f46;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]:focus, 
+.form-group input[type="email"]:focus, 
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #ffd43b; /* Acento amarillo Python */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 212, 59, 0.2);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #71717a;
+}
+
+.form-group select option {
+  background-color: #18181b;
+  color: #f9fafb;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #9ca3af;
+  line-height: 1.45;
+}
+
+.checkbox-group input {
+  margin-top: 3px;
+  accent-color: #ffd43b; /* Checkbox amarillo Python */
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+button {
+  background-color: #306998; /* Azul Python */
+  color: #ffffff;
+  border: 1px solid transparent;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #27567e;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button.btn-tutor {
+  background-color: #ffd43b; /* Amarillo Python */
+  color: #000000;
+  font-weight: 700;
+}
+
+button.btn-tutor:hover {
+  background-color: #facc15;
+}
+
+button.secondary {
+  background-color: #27272a;
+  color: #e5e7eb;
+  border: 1px solid #3f3f46;
+}
+
+button.secondary:hover {
+  background-color: #3f3f46;
+  color: #ffffff;
+}
+
+button.success {
+  background-color: #ffd43b; /* Amarillo Python */
+  color: #000000;
+  font-weight: 700;
+}
+
+button.success:hover {
+  background-color: #facc15;
+}
+
+.char-counter {
+  font-size: 12px;
+  color: #71717a;
+  text-align: right;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   Estilos Específicos del Test Vocacional
+   ========================================================================== */
+
+.question {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #27272a;
+  padding-bottom: 18px;
+}
+
+.question:last-child {
+  border-bottom: none;
+}
+
+.question p {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #f9fafb;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #d1d5db;
+  font-size: 15px;
+  transition: background-color 0.15s ease;
+}
+
+.option:hover {
+  background-color: #1c1c20;
+}
+
+.option input {
+  margin: 0;
+  accent-color: #ffd43b;
+  width: 16px;
+  height: 16px;
+}
+
+#result {
+  line-height: 1.65;
+  color: #e5e7eb;
+}
+
+.role-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffd43b; /* Título destacado con acento Python */
+  margin-bottom: 12px;
+  text-align: center;
+}
