@@ -79,6 +79,117 @@
       <div class="char-counter"><span id="counter">0</span> / 400 caracteres</div>
     </div>
 
+    <!-- NUEVAS SECCIONES -->
+    <h3>Perfil público de la comunidad</h3>
+    <div class="form-group">
+      <label for="public_name">¿Cómo te gustaría que te llamemos en la comunidad? (Obligatorio)</label>
+      <input type="text" id="public_name" placeholder="Ej. Sebas, Pepe, Ana María" required>
+    </div>
+    <div class="form-group">
+      <label for="public_email">Correo electrónico de contacto público (Opcional)</label>
+      <input type="email" id="public_email" placeholder="correo@ejemplo.com">
+    </div>
+    <div class="form-group">
+      <label for="public_linkedin">Enlace a tu LinkedIn (Opcional)</label>
+      <input type="url" id="public_linkedin" placeholder="https://www.linkedin.com/in/tu-perfil">
+    </div>
+    <div class="form-group">
+      <label for="public_github">Enlace a tu GitHub / Portafolio (Opcional)</label>
+      <input type="url" id="public_github" placeholder="https://github.com/tu-usuario">
+    </div>
+
+    <h3>Datos internos (Privados)</h3>
+    <div class="form-group">
+      <label for="private_fullname">Nombre completo (Obligatorio)</label>
+      <input type="text" id="private_fullname" placeholder="Juan Pérez" required>
+    </div>
+    <div class="form-group">
+      <label for="private_city">Ciudad de residencia (Obligatorio)</label>
+      <select id="private_city" required>
+        <option value="">Selecciona una opción...</option>
+        <option value="Bogotá">Bogotá</option>
+        <option value="Medellín">Medellín</option>
+        <option value="Cali">Cali</option>
+        <option value="Barranquilla">Barranquilla</option>
+        <option value="Bucaramanga">Bucaramanga</option>
+        <option value="Otra ciudad de Colombia">Otra ciudad de Colombia</option>
+        <option value="Fuera de Colombia">Fuera de Colombia</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="private_personal_email">Correo electrónico personal (Obligatorio)</label>
+      <input type="email" id="private_personal_email" placeholder="correo@ejemplo.com" required>
+    </div>
+    <div class="form-group">
+      <label for="private_phone">Número de teléfono / WhatsApp (Opcional)</label>
+      <input type="text" id="private_phone" placeholder="3001234567">
+    </div>
+    <div class="form-group">
+      <label>¿Cómo prefieres que nos comuniquemos contigo? (Obligatorio)</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="pref_email"> <label for="pref_email">Correo electrónico</label>
+        <input type="checkbox" id="pref_whatsapp"> <label for="pref_whatsapp">WhatsApp</label>
+        <input type="checkbox" id="pref_discord"> <label for="pref_discord">Discord/Slack</label>
+      </div>
+    </div>
+
+    <h3>Perfil profesional, tutorías y voluntariado</h3>
+    <div class="form-group">
+      <label for="professional_experience">Nivel de experiencia aproximado (Obligatorio)</label>
+      <select id="professional_experience" required>
+        <option value="">Selecciona una opción...</option>
+        <option value="Estudiante / Trainee">Estudiante / Trainee</option>
+        <option value="Junior">Junior</option>
+        <option value="Semi-Senior">Semi-Senior</option>
+        <option value="Senior">Senior</option>
+        <option value="Lead / Manager">Lead / Manager</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Área en la que te gustaría dar tutorías (Obligatorio)</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="tutor_topic_python"><label for="tutor_topic_python">Python</label>
+        <input type="checkbox" id="tutor_topic_github"><label for="tutor_topic_github">GitHub</label>
+        <input type="checkbox" id="tutor_topic_vscode"><label for="tutor_topic_vscode">Visual Studio Code</label>
+        <input type="checkbox" id="tutor_topic_colab"><label for="tutor_topic_colab">Google Colab</label>
+        <input type="checkbox" id="tutor_topic_sql"><label for="tutor_topic_sql">SQL</label>
+        <input type="checkbox" id="tutor_topic_aws"><label for="tutor_topic_aws">AWS</label>
+        <input type="checkbox" id="tutor_topic_databricks"><label for="tutor_topic_databricks">Databricks</label>
+        <input type="checkbox" id="tutor_topic_azure"><label for="tutor_topic_azure">Microsoft Azure</label>
+        <input type="checkbox" id="tutor_topic_analitica"><label for="tutor_topic_analitica">Analítica de datos</label>
+        <input type="checkbox" id="tutor_topic_cienciadatos"><label for="tutor_topic_cienciadatos">Ciencia de datos</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Además de tutorías, ¿te gustaría apoyar en otras áreas? (Opcional)</label>
+      <div class="checkbox-group">
+        <input type="checkbox" id="extra_eventos"><label for="extra_eventos">Organización y logística de eventos (meetups)</label>
+        <input type="checkbox" id="extra_contenido"><label for="extra_contenido">Creación de contenido / Redes sociales</label>
+        <input type="checkbox" id="extra_moderacion"><label for="extra_moderacion">Moderación de canales (Discord/Telegram)</label>
+        <input type="checkbox" id="extra_patrocinios"><label for="extra_patrocinios">Búsqueda de patrocinios / Alianzas</label>
+        <input type="checkbox" id="extra_solo"><label for="extra_solo">Solo me interesan las tutorías por ahora</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="availability">Disponibilidad de tiempo aproximada (Obligatorio)</label>
+      <select id="availability" required>
+        <option value="">Selecciona una opción...</option>
+        <option value="1 a 2 horas al mes">1 a 2 horas al mes</option>
+        <option value="3 a 5 horas al mes">3 a 5 horas al mes</option>
+        <option value="Más de 5 horas al mes">Más de 5 horas al mes</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="motivation">Cuéntanos más sobre ti y por qué te gustaría ser voluntario/a (Obligatorio)</label>
+      <textarea id="motivation" rows="4" placeholder="Escribe aquí..." required></textarea>
+    </div>
+
+    <h3>Compromiso con la comunidad</h3>
+    <div class="checkbox-group">
+      <input type="checkbox" id="code_of_conduct" required>
+      <label for="code_of_conduct">He leído y acepto el Código de Conducta de Python Colombia. Entiendo que esta es una comunidad diversa, inclusiva y libre de acoso.</label>
+    </div>
+
     <div class="checkbox-group">
       <input type="checkbox" id="autorizacion" required>
       <label for="autorizacion">Acepto el tratamiento de mis datos personales para fines de gestión de tutores (Obligatorio).</label>
