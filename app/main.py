@@ -16,4 +16,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(test_router.router, prefix="/api/v1/test", tags=["Test Vocacional"])
+app.include_router(test_router.router, tags=["Test Vocacional"])

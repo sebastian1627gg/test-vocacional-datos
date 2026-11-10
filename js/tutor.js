@@ -1,19 +1,15 @@
 const TUTOR_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEKo92OsT7R02T62Oo56cQcLCoDtpigNxOJqq46nUG5mKlVhrrLDRcIMa3u4IfjEvxGA/exec";
 
-function actualizarContador() {
-  const input = document.getElementById('interes');
-  const counter = document.getElementById('counter');
-  if (input && counter) counter.innerText = input.value.length;
-}
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let enviando = false;
 
-function getChecked(ids) {
-  return ids.filter(id => {
-    const el = document.getElementById(id);
-    return el && el.checked;
-  }).map(id => document.getElementById(id).closest('label').textContent.trim());
+function esEmailValido(valor) {
+  return EMAIL_RE.test(valor);
 }
 
 function enviarTutor() {
+  if (enviando) return;
+
   // ── Sección 1: Perfil público ──
   const public_name   = document.getElementById('public_name').value.trim();
   const public_email  = document.getElementById('public_email').value.trim();
@@ -67,8 +63,16 @@ function enviarTutor() {
     alert('Por favor indica cómo te llamamos en la comunidad (Sección 1).');
     return;
   }
+  if (public_email && !esEmailValido(public_email)) {
+    alert('El correo público no tiene un formato válido (Sección 1).');
+    return;
+  }
   if (!private_fullname || !private_gender || !private_city || !private_personal_email) {
     alert('Por favor completa todos los campos obligatorios de la Sección 2 (Datos internos).');
+    return;
+  }
+  if (!esEmailValido(private_personal_email)) {
+    alert('El correo personal no tiene un formato válido (Sección 2).');
     return;
   }
   if (contact_prefs.length === 0) {
@@ -122,18 +126,41 @@ function enviarTutor() {
     autorizacion:    'Aceptado'
   };
 
-  if (TUTOR_SCRIPT_URL) {
-    fetch(TUTOR_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(datos)
-    }).catch(err => console.error("Error al enviar:", err));
+  const botonEnviar = document.querySelector('#step-tutor-form .btn-green');
+
+  async function enviar() {
+    enviando = true;
+    if (botonEnviar) {
+      botonEnviar.disabled = true;
+      botonEnviar.textContent = 'Enviando…';
+    }
+
+    try {
+      if (TUTOR_SCRIPT_URL) {
+        await fetch(TUTOR_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(datos)
+        });
+      }
+
+      document.getElementById('step-tutor-form').style.display = 'none';
+      document.getElementById('thanks-container').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (err) {
+      console.error('Error al enviar:', err);
+      alert('No pudimos enviar tus datos. Revisa tu conexión e inténtalo de nuevo.');
+    } finally {
+      enviando = false;
+      if (botonEnviar) {
+        botonEnviar.disabled = false;
+        botonEnviar.textContent = 'Enviar';
+      }
+    }
   }
 
-  document.getElementById('step-tutor-form').style.display = 'none';
-  document.getElementById('thanks-container').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  enviar();
 }
 
 function enviarOtro() {

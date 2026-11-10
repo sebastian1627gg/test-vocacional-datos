@@ -3,102 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutores Voluntarios</title>
-  <!-- Tipografía Titillium Web de Python Colombia -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta http-equiv="refresh" content="0; url=tutor.html">
+  <link rel="canonical" href="tutor.html">
+  <title>Redirigiendo…</title>
 </head>
 <body>
-
-  <!-- ENCABEZADO ESTILO PYTHON COLOMBIA -->
-  <div class="title-header">
-    <p class="tag-title"><span class="tag-line"></span>VOLUNTARIOS</p>
-    <h1>Tutores Voluntarios</h1>
-    <span class="title-squares" aria-hidden="true">
-      <span class="sq sq-red"></span>
-      <span class="sq sq-orange"></span>
-      <span class="sq sq-yellow"></span>
-      <span class="sq sq-green"></span>
-      <span class="sq sq-blue"></span>
-      <span class="sq sq-purple"></span>
-    </span>
-  </div>
-
-  <div class="card" id="step-tutor-form">
-    <h2>Registro de Tutor Voluntario</h2>
-    
-    <div class="form-group">
-      <label for="correo">Correo electrónico:</label>
-      <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
-    </div>
-
-    <div class="form-group">
-      <label for="nombre">Nombre completo y apodo con el que deseas ser llamado:</label>
-      <input type="text" id="nombre" placeholder="Ej. Juan Pérez (Juancho)" required>
-    </div>
-
-    <div class="form-group">
-      <label for="genero">Género:</label>
-      <select id="genero" required>
-        <option value="">Selecciona una opción...</option>
-        <option value="Femenino">Femenino</option>
-        <option value="Masculino">Masculino</option>
-        <option value="No binario">No binario</option>
-        <option value="Prefiero no decirlo">Prefiero no decirlo</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="telefono">Número de teléfono (Opcional):</label>
-      <input type="text" id="telefono" placeholder="Ej. 3001234567">
-    </div>
-
-    <div class="form-group">
-      <label for="area">Área en la que te gustaría dar tutorías:</label>
-      <select id="area" required>
-        <option value="">Selecciona una opción...</option>
-        <option value="Fundamentos de Python">Fundamentos de Python</option>
-        <option value="Google Colab y Entornos">Google Colab y Entornos</option>
-        <option value="Visual Studio Code">Visual Studio Code</option>
-        <option value="Bases de Datos">Bases de Datos</option>
-        <option value="Analítica de Datos">Analítica de Datos</option>
-        <option value="Ciencia de Datos">Ciencia de Datos</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="disponibilidad">Disponibilidad horaria:</label>
-      <input type="text" id="disponibilidad" placeholder="Ej. Todos los lunes de 3 a 4 pm" required>
-    </div>
-
-    <div class="form-group">
-      <label for="interes">Cuéntanos sobre tu interés o experiencia en esta tutoría (Máximo 400 caracteres):</label>
-      <textarea id="interes" rows="3" maxlength="400" placeholder="Escribe brevemente por qué deseas apoyar..." oninput="actualizarContador()"></textarea>
-      <div class="char-counter"><span id="counter">0</span> / 400 caracteres</div>
-    </div>
-
-    <div class="checkbox-group">
-      <input type="checkbox" id="autorizacion" required>
-      <label for="autorizacion">Acepto el tratamiento de mis datos personales para fines de gestión de tutores (Obligatorio).</label>
-    </div>
-
-    <div class="btn-container">
-      <button class="btn-yellow" onclick="window.location.href='index.html'">Volver a la página principal</button>
-      <button class="btn-green" onclick="enviarTutor()">Enviar</button>
-    </div>
-  </div>
-
-  <div class="card" id="thanks-container" style="display:none; text-align: left;">
-    <h2>Respuesta enviada</h2>
-    <p>Te agradecemos tu interés en ser tutor voluntario. Tus datos se han registrado con éxito.</p>
-    <div class="btn-container">
-      <button class="btn-green" onclick="enviarOtro()">Enviar otra respuesta</button>
-      <button class="btn-yellow" onclick="window.location.href='index.html'">Volver a la página principal</button>
-    </div>
-  </div>
-
-  <script src="js/tutor.js"></script>
+  <p>Redirigiendo al <a href="tutor.html">formulario de tutores voluntarios</a>…</p>
+  <script>window.location.replace('tutor.html');</script>
 </body>
 </html>
