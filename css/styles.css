@@ -1,11 +1,10 @@
 /* ==========================================================================
-   Importación de Fuentes (Google Fonts: Inter)
-   Inspirado en el diseño moderno de Python Colombia (python.org.co)
+   Importación de Fuentes (Titillium Web de Python Colombia: python.org.co)
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
 
 /* ==========================================================================
-   Estilos Generales y Tema Oscuro
+   Estilos Generales y Tema Oscuro (Python Colombia)
    ========================================================================== */
 
 * {
@@ -13,67 +12,85 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  max-width: 740px;
+  font-family: 'Titillium Web', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 760px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #000000; /* Fondo negro */
-  color: #e5e7eb; /* Texto claro */
-  line-height: 1.6;
+  background-color: #0d0d1a; /* Fondo exacto de Python Colombia (--color-night) */
+  color: #f4f4f5;
+  line-height: 1.5;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ==========================================================================
-   Encabezados Principales y Decoración Estilo Python Colombia
+   Encabezados Principales y Decoraciones de Python Colombia
    ========================================================================== */
 
 .title-header {
   margin-bottom: 24px;
 }
 
-/* Letra de los títulos grande */
-h1 {
-  color: #ffffff;
-  font-size: 46px; /* Título grande */
-  font-weight: 800;
-  text-align: left;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
+/* Titulito con la línea horizontal (h-px w-10 bg-current) */
+.tag-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: #ffd43b; /* Amarillo Python */
   margin: 0 0 12px 0;
 }
 
-/* Los 6 cuadritos chiquitos ubicados a la izquierda */
+.tag-line {
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+/* Letra del título principal (Font-black 900 de Python Colombia) */
+h1 {
+  font-family: 'Titillium Web', sans-serif;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 900; /* Peso 900 idéntico al de la imagen */
+  text-align: left;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  margin: 0 0 14px 0;
+}
+
+/* Los 6 cuadritos exactos de Python Colombia (cuadrados perfectos, sin redondear) */
 .title-squares {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin: 12px 0 24px 0;
+  gap: 4px; /* gap-1 = 4px */
+  margin: 0 0 24px 0;
 }
 
 .sq {
-  width: 14px;
-  height: 14px;
-  border-radius: 3px;
+  width: 8px; /* h-2 = 8px */
+  height: 8px; /* w-2 = 8px */
+  border-radius: 0 !important; /* Cuadrados sin bordes redondos */
   display: inline-block;
-  transition: transform 0.2s ease;
 }
 
-.sq:hover {
-  transform: scale(1.25);
-}
+/* Colores exactos de Python Colombia */
+.sq-red    { background-color: #e24329; } /* bg-accent-red */
+.sq-orange { background-color: #f58220; } /* bg-accent-orange */
+.sq-yellow { background-color: #ffd43b; } /* bg-python-yellow */
+.sq-green  { background-color: #2fb350; } /* bg-accent-green */
+.sq-blue   { background-color: #4b8bbe; } /* bg-python-blue-light */
+.sq-purple { background-color: #5c4ee5; } /* bg-accent-purple */
 
-.sq-yellow { background-color: #ffd43b; }
-.sq-green  { background-color: #22c55e; }
-.sq-orange { background-color: #f97316; }
-.sq-blue   { background-color: #306998; }
-.sq-cyan   { background-color: #38bdf8; }
-.sq-pink   { background-color: #ec4899; }
-
-/* Subtítulos en azul al igual que en Python Colombia */
+/* Subtítulos en el azul exacto de Python Colombia (#4b8bbe) */
 h2 {
-  color: #38bdf8 !important; /* Azul celeste de Python Colombia */
+  font-family: 'Titillium Web', sans-serif;
+  color: #4b8bbe !important; /* Azul exacto de Python Colombia (--color-python-blue-light) */
   font-size: 24px;
   font-weight: 700;
   margin-top: 0;
@@ -87,11 +104,11 @@ h2 {
    ========================================================================== */
 
 .card {
-  background-color: #121214; /* Superficie de tarjeta oscura */
-  border: 1px solid #27272a; /* Borde sutil */
-  border-radius: 12px;
+  background-color: #16162e; /* Tarjeta oscura de Python Colombia (--color-night-card) */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   margin-bottom: 26px;
 }
 
@@ -106,9 +123,9 @@ h2 {
 .form-group label {
   display: block;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 8px;
-  color: #d1d5db;
+  color: #d4d4d8;
 }
 
 .form-group input[type="text"], 
@@ -117,10 +134,10 @@ h2 {
 .form-group textarea {
   width: 100%;
   padding: 12px 14px;
-  background-color: #18181b; /* Fondo oscuro de campos */
-  color: #f9fafb;
+  background-color: #0d0d1a;
+  color: #ffffff;
   border: 1px solid #3f3f46;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 15px;
   font-family: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -130,9 +147,9 @@ h2 {
 .form-group input[type="email"]:focus, 
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: #ffd43b; /* Acento amarillo Python */
+  border-color: #ffd43b;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 212, 59, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 212, 59, 0.3);
 }
 
 .form-group input::placeholder,
@@ -141,8 +158,8 @@ h2 {
 }
 
 .form-group select option {
-  background-color: #18181b;
-  color: #f9fafb;
+  background-color: #0d0d1a;
+  color: #ffffff;
 }
 
 .checkbox-group {
@@ -151,13 +168,13 @@ h2 {
   gap: 12px;
   margin-top: 22px;
   font-size: 14px;
-  color: #9ca3af;
+  color: #a1a1aa;
   line-height: 1.45;
 }
 
 .checkbox-group input {
   margin-top: 3px;
-  accent-color: #ffd43b; /* Checkbox amarillo Python */
+  accent-color: #ffd43b;
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -171,80 +188,78 @@ h2 {
 }
 
 /* ==========================================================================
-   Botones Estilo Python Colombia (Doble Capa: un botón encima del otro)
-   Los botones son estrictamente AMARILLOS y VERDES.
-   Al ir a dar click, la capa inferior (naranja o verde claro) asoma/sale de abajo.
+   Botones de Python Colombia (Amarillos y Verdes con doble capa 3D)
    ========================================================================== */
 
 .btn-container {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   margin-top: 26px;
+}
+
+.btn-container button {
+  flex: 1; /* Mismo tamaño para botones emparejados */
 }
 
 button, .btn {
   display: inline-block;
-  font-family: inherit;
-  font-size: 15px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 14px;
   font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   text-align: center;
   cursor: pointer;
-  padding: 13px 22px;
-  border-radius: 8px;
+  padding: 14px 24px;
+  border-radius: 4px;
   border: 2px solid #000000;
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   outline: none;
 }
 
-/* --- BOTÓN AMARILLO (con capa NARANJA debajo) --- */
+/* --- BOTÓN AMARILLO (Capa naranja de Python Colombia debajo) --- */
 button.btn-yellow,
 button.btn-tutor,
 button:not(.btn-green) {
   background-color: #ffd43b !important; /* Amarillo Python */
-  color: #000000 !important;
-  /* Capa inferior en color NARANJA (#ff6b00) con su propio borde negro */
-  box-shadow: 5px 5px 0px 0px #ff6b00, 5px 5px 0px 2px #000000;
+  color: #0d0d1a !important;
+  box-shadow: 5px 5px 0px 0px #f58220, 5px 5px 0px 2px #000000;
 }
 
 button.btn-yellow:hover,
 button.btn-tutor:hover,
 button:not(.btn-green):hover {
-  /* Al ir a dar click, el botón superior se levanta y el botón naranja sale de abajo */
   transform: translate(-3px, -3px);
-  box-shadow: 9px 9px 0px 0px #ff6b00, 9px 9px 0px 2px #000000;
+  box-shadow: 8px 8px 0px 0px #f58220, 8px 8px 0px 2px #000000;
 }
 
 button.btn-yellow:active,
 button.btn-tutor:active,
 button:not(.btn-green):active {
-  /* Al presionarlo se hunde sobre el de abajo */
-  transform: translate(3px, 3px);
-  box-shadow: 2px 2px 0px 0px #ff6b00, 2px 2px 0px 2px #000000;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #f58220, 2px 2px 0px 2px #000000;
 }
 
-/* --- BOTÓN VERDE (con capa VERDE CLARO debajo) --- */
+/* --- BOTÓN VERDE (Capa verde claro debajo) --- */
 button.btn-green,
 button.success {
-  background-color: #22c55e !important; /* Verde Python */
-  color: #000000 !important;
-  /* Capa inferior en color VERDE CLARO (#86efac) con su propio borde negro */
+  background-color: #2fb350 !important; /* Verde Python Colombia */
+  color: #0d0d1a !important;
   box-shadow: 5px 5px 0px 0px #86efac, 5px 5px 0px 2px #000000;
 }
 
 button.btn-green:hover,
 button.success:hover {
-  /* Al ir a dar click, el botón superior se levanta y el verde claro sale de abajo */
   transform: translate(-3px, -3px);
-  box-shadow: 9px 9px 0px 0px #86efac, 9px 9px 0px 2px #000000;
+  box-shadow: 8px 8px 0px 0px #86efac, 8px 8px 0px 2px #000000;
 }
 
 button.btn-green:active,
 button.success:active {
-  /* Al presionarlo se hunde sobre el de abajo */
-  transform: translate(3px, 3px);
+  transform: translate(2px, 2px);
   box-shadow: 2px 2px 0px 0px #86efac, 2px 2px 0px 2px #000000;
 }
 
@@ -254,7 +269,7 @@ button.success:active {
 
 .question {
   margin-bottom: 24px;
-  border-bottom: 1px solid #27272a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 18px;
 }
 
@@ -266,7 +281,7 @@ button.success:active {
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 12px;
-  color: #f9fafb;
+  color: #f4f4f5;
 }
 
 .option {
@@ -275,15 +290,15 @@ button.success:active {
   gap: 10px;
   margin: 10px 0;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  color: #d1d5db;
+  color: #d4d4d8;
   font-size: 15px;
   transition: background-color 0.15s ease;
 }
 
 .option:hover {
-  background-color: #1c1c20;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .option input {
@@ -295,13 +310,14 @@ button.success:active {
 
 #result {
   line-height: 1.65;
-  color: #e5e7eb;
+  color: #e4e4e7;
 }
 
 .role-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: #38bdf8; /* Azul celeste */
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: #4b8bbe; /* Azul Python Colombia */
   margin-bottom: 14px;
   text-align: left;
 }
