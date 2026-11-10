@@ -32,26 +32,6 @@ body {
   margin-bottom: 24px;
 }
 
-/* Titulito con la línea horizontal (h-px w-10 bg-current) */
-.tag-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.35em;
-  color: #ffd43b; /* Amarillo Python */
-  margin: 0 0 12px 0;
-}
-
-.tag-line {
-  display: inline-block;
-  width: 40px;
-  height: 1px;
-  background-color: currentColor;
-}
-
 /* Letra del título principal (Font-black 900 de Python Colombia) */
 h1 {
   font-family: 'Titillium Web', sans-serif;
@@ -64,15 +44,21 @@ h1 {
   margin: 0 0 14px 0;
 }
 
-/* Los 6 cuadritos exactos de Python Colombia (cuadrados perfectos, sin redondear) */
+/* Los 6 cuadritos exactos de Python Colombia (12px × 12px, cuadrados perfectos, gap 6px) */
 .title-squares {
   display: inline-flex;
   align-items: center;
-  gap: 4px; /* gap-1 = 4px */
+  gap: 6px;
   margin: 0 0 24px 0;
 }
 
 .sq {
+  width: 12px; /* 12px exactos como en la foto */
+  height: 12px; /* 12px exactos como en la foto */
+  border-radius: 0 !important; /* Cuadrados sin bordes redondos */
+  display: inline-block;
+  flex-shrink: 0;
+}
   width: 8px; /* h-2 = 8px */
   height: 8px; /* w-2 = 8px */
   border-radius: 0 !important; /* Cuadrados sin bordes redondos */
@@ -320,6 +306,84 @@ button.success:active {
   color: #4b8bbe; /* Azul Python Colombia */
   margin-bottom: 14px;
   text-align: left;
+}
+
+/* ==========================================================================
+   Estilos para las Secciones del Formulario de Tutores
+   ========================================================================== */
+
+.form-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 32px;
+  padding-top: 24px;
+}
+
+.form-section h3 {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffd43b;
+  margin-top: 0;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.section-notice {
+  font-size: 13px;
+  color: #a1a1aa;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid #4b8bbe;
+  padding: 10px 14px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.help-text {
+  font-size: 12px;
+  color: #71717a;
+  margin-top: 5px;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.required {
+  color: #e24329;
+  margin-left: 2px;
+}
+
+.optional {
+  color: #71717a;
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/* Checkbox group como lista vertical dentro de formularios */
+.form-group .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.form-group .checkbox-group label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #d4d4d8;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.form-group .checkbox-group input[type="checkbox"] {
+  margin-top: 2px;
+  accent-color: #ffd43b;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 /* Responsividad para móviles */
