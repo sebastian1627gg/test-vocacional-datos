@@ -3,135 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Vocacional - Roles de Datos</title>
+  <title>Tutores - Python Colombia</title>
   <!-- Tipografía Titillium Web de Python Colombia -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css?v=3">
+  <link rel="stylesheet" href="css/home.css?v=2">
 </head>
-<body>
+<body class="home">
 
-  <!-- ENCABEZADO ESTILO PYTHON COLOMBIA -->
-  <div class="title-header">
-    <p class="tag-title"><span class="tag-line"></span>TEST VOCACIONAL</p>
-    <h1>Test Vocacional</h1>
-    <span class="title-squares" aria-hidden="true">
-      <span class="sq sq-red"></span>
-      <span class="sq sq-orange"></span>
-      <span class="sq sq-yellow"></span>
-      <span class="sq sq-green"></span>
-      <span class="sq sq-blue"></span>
-      <span class="sq sq-purple"></span>
-    </span>
-  </div>
 
-  <!-- BOTÓN PARA IR AL FORMULARIO DE TUTORES (CENTRADO) -->
-  <div style="text-align: center; margin-bottom: 32px;">
-    <button onclick="window.location.href='tutor.html'" class="btn-yellow" style="max-width: 360px; margin: 0 auto; display: inline-block;">Inscribirme como Tutor Voluntario</button>
-  </div>
+  <main class="wrap">
 
-  <!-- SECCIÓN 1: DATOS PERSONALES -->
-  <div class="card" id="step-form">
-    <h2>Datos personales</h2>
-    
-    <div class="form-group">
-      <label for="nombre">Nombre completo:</label>
-      <input type="text" id="nombre" placeholder="Ej. Ana Pérez" required>
-    </div>
+    <!-- HERO -->
+    <section class="hero">
+      <p class="tag-title"><span class="tag-line"></span>RUTA DE APRENDIZAJE</p>
+      <h1>Aprende Python con un<br><span class="hl">tutor</span> de la comunidad</h1>
+      <p class="hero-lead">
+        Estos son los tutores aprobados por Python Colombia. Cada uno acompaña una parte de la ruta,
+        desde el pensamiento computacional hasta los primeros proyectos reales.
+        Escríbele a quien mejor encaje contigo.
+      </p>
+      <div class="hero-actions">
+        <button onclick="window.location.href='tutor.html'" class="btn-yellow btn-tutor-cta">Inscribirme como Tutor Voluntario</button>
+        <a href="#tutores" class="btn-outline-green">Cómo funciona</a>
+      </div>
+    </section>
 
-    <div class="form-group">
-      <label for="correo">Correo electrónico:</label>
-      <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
-    </div>
+    <!-- TUTORES DISPONIBLES -->
+    <section id="tutores" class="tutors">
+      <div class="section-label"><span>Tutores disponibles</span></div>
 
-    <div class="form-group">
-      <label for="genero">Género:</label>
-      <select id="genero" required>
-        <option value="">Selecciona una opción...</option>
-        <option value="Femenino">Femenino</option>
-        <option value="Masculino">Masculino</option>
-        <option value="No binario">No binario</option>
-        <option value="Prefiero no decirlo">Prefiero no decirlo</option>
-      </select>
-    </div>
+      <div class="search-row">
+        <label for="tutor-search">Buscar</label>
+        <input type="search" id="tutor-search" placeholder="Nombre, especialidad o tecnología" autocomplete="off">
+        <span class="tutor-count" id="tutor-count" aria-live="polite">6 tutores</span>
+      </div>
 
-    <div class="form-group">
-      <label for="edad">Rango de edad:</label>
-      <select id="edad" required>
-        <option value="">Selecciona una opción...</option>
-        <option value="Menos de 18 años">Menos de 18 años</option>
-        <option value="18 a 24 años">18 a 24 años</option>
-        <option value="25 a 34 años">25 a 34 años</option>
-        <option value="35 a 44 años">35 a 44 años</option>
-        <option value="45 años o más">45 años o más</option>
-      </select>
-    </div>
+      <div class="filters" role="group" aria-label="Filtrar por área">
+        <a href="#" class="filter active" data-filter="todas" aria-pressed="true">Todas</a>
+        <a href="#" class="filter" data-filter="fundamentos" aria-pressed="false">Fundamentos</a>
+        <a href="#" class="filter" data-filter="backend" aria-pressed="false">Backend</a>
+        <a href="#" class="filter" data-filter="datos" aria-pressed="false">Datos e IA</a>
+        <a href="#" class="filter" data-filter="qa" aria-pressed="false">QA y Seguridad</a>
+        <a href="#" class="filter" data-filter="infra" aria-pressed="false">Infraestructura</a>
+      </div>
 
-    <div class="form-group">
-      <label for="perfil">Perfil u ocupación principal:</label>
-      <select id="perfil" required>
-        <option value="">Selecciona una opción...</option>
-        <option value="Estudiante">Estudiante</option>
-        <option value="Trabaja en tecnología">Trabaja en tecnología</option>
-        <option value="Otro campo ajeno a la tecnología">Otro campo ajeno a la tecnología</option>
-      </select>
-    </div>
+      <div class="tutor-grid" id="tutor-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>No encontramos tutores con ese criterio. Prueba con otra búsqueda.</p>
+    </section>
+  </main>
 
-    <div class="form-group">
-      <label for="experiencia">Años de experiencia en tu área actual:</label>
-      <select id="experiencia" required>
-        <option value="">Selecciona una opción...</option>
-        <option value="Sin experiencia (0 años)">Sin experiencia (0 años)</option>
-        <option value="Menos de 1 año">Menos de 1 año</option>
-        <option value="1 a 3 años">1 a 3 años</option>
-        <option value="Más de 3 años">Más de 3 años</option>
-      </select>
-    </div>
 
-    <div class="form-group">
-      <label for="sobre_ti">Cuéntanos más sobre ti y tu experiencia:</label>
-      <textarea id="sobre_ti" rows="3" maxlength="300" placeholder="Escribe brevemente sobre tus metas, intereses o trayectoria profesional..." oninput="actualizarContador()"></textarea>
-      <div class="char-counter"><span id="counter">0</span> / 300 caracteres</div>
-    </div>
-
-    <div class="checkbox-group">
-      <input type="checkbox" id="autorizacion" required>
-      <label for="autorizacion">Autorizo el tratamiento de mis datos personales con fines estadísticos y de orientación vocacional (Obligatorio).</label>
-    </div>
-
-    <button onclick="irAlTest()" class="btn-green" style="margin-top: 24px;">Siguiente</button>
-  </div>
-
-  <!-- SECCIÓN 2: TEST VOCACIONAL -->
-  <div class="card" id="step-test" style="display:none;">
-    <h2>Resuelve las preguntas</h2>
-    <div id="test-container"></div>
-    <div class="btn-container">
-      <button class="btn-yellow" onclick="regresarAlFormulario()">Retroceder</button>
-      <button class="btn-green" onclick="calcularResultado()">Enviar Respuestas y Ver Resultado</button>
-    </div>
-  </div>
-
-  <!-- SECCIÓN 3: RESULTADOS -->
-  <div class="card" id="result-container" style="display:none;">
-    <h2>Resultados: ¿Hacia dónde apunta tu brújula?</h2>
-    <div id="result"></div>
-    <div class="btn-container">
-      <button class="btn-yellow" onclick="reiniciarTest()">Mandar otra respuesta</button>
-      <button class="btn-green" onclick="finalizarTest()">Finalizar</button>
-    </div>
-  </div>
-
-  <!-- SECCIÓN 4: PANTALLA DE AGRADECIMIENTO AL FINALIZAR -->
-  <div class="card" id="thanks-container" style="display:none; text-align: left;">
-    <h2>¡Gracias por realizar el Test Vocacional!</h2>
-    <p>Tus respuestas se han registrado con éxito. Esperamos que este resultado te oriente en tu camino en el mundo de los datos.</p>
-    <div style="text-align: center; margin-top: 24px;">
-      <button class="btn-yellow" style="max-width: 320px; margin: 0 auto; display: inline-block;" onclick="reiniciarTest()">Realizar el test de nuevo</button>
-    </div>
-  </div>
-
-  <script src="js/main.js?v=2"></script>
+  <script src="js/home.js?v=1"></script>
 </body>
 </html>
