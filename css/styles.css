@@ -2,10 +2,10 @@
    Importación de Fuentes (Google Fonts: Inter)
    Inspirado en el diseño moderno de Python Colombia (python.org.co)
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 /* ==========================================================================
-   Estilos Generales y Tema Oscuro (Python Colombia)
+   Estilos Generales y Tema Oscuro
    ========================================================================== */
 
 * {
@@ -14,7 +14,7 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  max-width: 720px;
+  max-width: 740px;
   margin: 40px auto;
   padding: 20px;
   background-color: #000000; /* Fondo negro */
@@ -25,43 +25,122 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1 {
-  color: #ffffff;
-  font-size: 32px;
-  font-weight: 700;
-  text-align: center;
-  letter-spacing: -0.025em;
+/* ==========================================================================
+   Encabezados Principales y Decoración Estilo Python Colombia
+   ========================================================================== */
+
+.title-header {
   margin-bottom: 24px;
 }
 
+/* Titulito pequeñito con la línea al inicio (ej. —— TEST / —— VOLUNTARIOS) */
+.pre-title {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.pre-title::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 3px;
+  background-color: currentColor;
+  margin-right: 10px;
+  border-radius: 2px;
+}
+
+.pre-title-orange {
+  color: #f97316; /* Naranja vibrante */
+}
+
+.pre-title-green {
+  color: #22c55e; /* Verde Python Colombia */
+}
+
+.pre-title-yellow {
+  color: #ffd43b; /* Amarillo Python */
+}
+
+/* Letra de los títulos grande */
+h1 {
+  color: #ffffff;
+  font-size: 46px; /* Título grande */
+  font-weight: 800;
+  text-align: left;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 6px 0 12px 0;
+}
+
+/* Los 6 cuadritos chiquitos ubicados a la izquierda */
+.title-squares {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 24px 0;
+}
+
+.sq {
+  width: 13px;
+  height: 13px;
+  border-radius: 3px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.sq:hover {
+  transform: scale(1.25);
+}
+
+.sq-yellow { background-color: #ffd43b; }
+.sq-green  { background-color: #22c55e; }
+.sq-orange { background-color: #f97316; }
+.sq-blue   { background-color: #306998; }
+.sq-cyan   { background-color: #38bdf8; }
+.sq-pink   { background-color: #ec4899; }
+
+/* Subtítulos en azul al igual que en Python Colombia */
 h2 {
-  color: #f9fafb;
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 0;
+  color: #38bdf8; /* Azul eléctrico / celeste de Python Colombia */
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 4px;
   margin-bottom: 18px;
-  text-align: center;
+  text-align: left;
   letter-spacing: -0.015em;
 }
+
+/* ==========================================================================
+   Tarjetas / Contenedores
+   ========================================================================== */
 
 .card {
   background-color: #121214; /* Superficie de tarjeta oscura */
   border: 1px solid #27272a; /* Borde sutil */
   border-radius: 12px;
-  padding: 28px;
+  padding: 30px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
+/* ==========================================================================
+   Formularios
+   ========================================================================== */
+
 .form-group {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .form-group label {
   display: block;
   font-size: 14px;
   font-weight: 500;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   color: #d1d5db;
 }
 
@@ -117,71 +196,118 @@ h2 {
   cursor: pointer;
 }
 
-.btn-container {
-  display: flex;
-  gap: 12px;
-  margin-top: 24px;
-}
-
-button {
-  background-color: #306998; /* Azul Python */
-  color: #ffffff;
-  border: 1px solid transparent;
-  padding: 12px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: inherit;
-  transition: all 0.2s ease;
-}
-
-button:hover {
-  background-color: #27567e;
-  transform: translateY(-1px);
-}
-
-button:active {
-  transform: translateY(0);
-}
-
-button.btn-tutor {
-  background-color: #ffd43b; /* Amarillo Python */
-  color: #000000;
-  font-weight: 700;
-}
-
-button.btn-tutor:hover {
-  background-color: #facc15;
-}
-
-button.secondary {
-  background-color: #27272a;
-  color: #e5e7eb;
-  border: 1px solid #3f3f46;
-}
-
-button.secondary:hover {
-  background-color: #3f3f46;
-  color: #ffffff;
-}
-
-button.success {
-  background-color: #ffd43b; /* Amarillo Python */
-  color: #000000;
-  font-weight: 700;
-}
-
-button.success:hover {
-  background-color: #facc15;
-}
-
 .char-counter {
   font-size: 12px;
   color: #71717a;
   text-align: right;
   margin-top: 6px;
+}
+
+/* ==========================================================================
+   Botones con Efecto de Capa Desplazada (Under-layer 3D Pop-out)
+   Al pasar el ratón para dar click, la capa inferior (naranja o verde)
+   se asoma debajo del botón principal (amarillo o verde).
+   ========================================================================== */
+
+.btn-container {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+button {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  padding: 13px 22px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  position: relative;
+  width: 100%;
+  transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- Botón Amarillo (con capa Naranja debajo que emerge al ir a dar click) --- */
+button.btn-yellow, 
+button.btn-tutor,
+button:not(.btn-green):not(.secondary):not(.success) {
+  background-color: #ffd43b; /* Amarillo Python */
+  color: #000000;
+  box-shadow: 4px 4px 0px #ea580c; /* Capa naranja debajo */
+}
+
+button.btn-yellow:hover, 
+button.btn-tutor:hover,
+button:not(.btn-green):not(.secondary):not(.success):hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #ea580c; /* La capa naranja sale más cuando vas a hacer click */
+}
+
+button.btn-yellow:active, 
+button.btn-tutor:active,
+button:not(.btn-green):not(.secondary):not(.success):active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #ea580c;
+}
+
+/* --- Botón Verde (con capa Verde Oscura o Naranja debajo) --- */
+button.btn-green, 
+button.success {
+  background-color: #22c55e; /* Verde brillante Python Colombia */
+  color: #000000;
+  box-shadow: 4px 4px 0px #15803d; /* Capa verde oscura debajo */
+}
+
+button.btn-green:hover, 
+button.success:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #15803d; /* La capa verde emerge al dar click */
+}
+
+button.btn-green:active, 
+button.success:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #15803d;
+}
+
+/* Variante de botón verde con capa naranja debajo */
+button.btn-green-orange {
+  background-color: #22c55e;
+  color: #000000;
+  box-shadow: 4px 4px 0px #ea580c; /* Naranja debajo */
+}
+
+button.btn-green-orange:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #ea580c;
+}
+
+button.btn-green-orange:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #ea580c;
+}
+
+/* --- Botón Secundario (Gris oscuro con capa de sombra pronunciada) --- */
+button.secondary {
+  background-color: #27272a;
+  color: #f3f4f6;
+  border: 2px solid #3f3f46;
+  box-shadow: 4px 4px 0px #09090b;
+}
+
+button.secondary:hover {
+  background-color: #3f3f46;
+  color: #ffffff;
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #09090b;
+}
+
+button.secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #09090b;
 }
 
 /* ==========================================================================
@@ -235,9 +361,19 @@ button.success:hover {
 }
 
 .role-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: #ffd43b; /* Título destacado con acento Python */
-  margin-bottom: 12px;
-  text-align: center;
+  font-size: 21px;
+  font-weight: 800;
+  color: #ffd43b; /* Título destacado con amarillo Python */
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 34px;
+  }
+  .btn-container {
+    flex-direction: column;
+  }
 }

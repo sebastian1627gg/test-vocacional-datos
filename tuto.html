@@ -7,30 +7,43 @@
   <!-- Tipografía Inter (referencia estilo Python Colombia) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <h1>Tutores Voluntarios</h1>
+  <!-- ENCABEZADO ESTILO PYTHON COLOMBIA -->
+  <div class="title-header">
+    <div class="pre-title pre-title-green">—— VOLUNTARIOS</div>
+    <h1>Tutores Voluntarios</h1>
+    <div class="title-squares">
+      <span class="sq sq-yellow"></span>
+      <span class="sq sq-green"></span>
+      <span class="sq sq-orange"></span>
+      <span class="sq sq-blue"></span>
+      <span class="sq sq-cyan"></span>
+      <span class="sq sq-pink"></span>
+    </div>
+  </div>
 
   <div class="card" id="step-tutor-form">
+    <div class="pre-title pre-title-orange">—— REGISTRO</div>
     <h2>Registro de Tutor Voluntario</h2>
     
     <div class="form-group">
-      <label for="correo">Correo electronico:</label>
+      <label for="correo">Correo electrónico:</label>
       <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
     </div>
 
     <div class="form-group">
       <label for="nombre">Nombre completo y apodo con el que deseas ser llamado:</label>
-      <input type="text" id="nombre" placeholder="Ej. Juan Perez (Juancho)" required>
+      <input type="text" id="nombre" placeholder="Ej. Juan Pérez (Juancho)" required>
     </div>
 
     <div class="form-group">
-      <label for="genero">Genero:</label>
+      <label for="genero">Género:</label>
       <select id="genero" required>
-        <option value="">Selecciona una opcion...</option>
+        <option value="">Selecciona una opción...</option>
         <option value="Femenino">Femenino</option>
         <option value="Masculino">Masculino</option>
         <option value="No binario">No binario</option>
@@ -39,19 +52,19 @@
     </div>
 
     <div class="form-group">
-      <label for="telefono">Numero de telefono (Opcional):</label>
+      <label for="telefono">Número de teléfono (Opcional):</label>
       <input type="text" id="telefono" placeholder="Ej. 3001234567">
     </div>
 
     <div class="form-group">
-      <label for="area">Area en la que te gustaria dar tutorias:</label>
+      <label for="area">Área en la que te gustaría dar tutorías:</label>
       <select id="area" required>
-        <option value="">Selecciona una opcion...</option>
+        <option value="">Selecciona una opción...</option>
         <option value="Fundamentos de Python">Fundamentos de Python</option>
         <option value="Google Colab y Entornos">Google Colab y Entornos</option>
         <option value="Visual Studio Code">Visual Studio Code</option>
         <option value="Bases de Datos">Bases de Datos</option>
-        <option value="Analitica de Datos">Analitica de Datos</option>
+        <option value="Analítica de Datos">Analítica de Datos</option>
         <option value="Ciencia de Datos">Ciencia de Datos</option>
       </select>
     </div>
@@ -62,28 +75,29 @@
     </div>
 
     <div class="form-group">
-      <label for="interes">Cuentanos sobre tu interes o experiencia en esta tutoria (Maximo 400 caracteres):</label>
-      <textarea id="interes" rows="3" maxlength="400" placeholder="Escribe brevemente por que deseas apoyar..." oninput="actualizarContador()"></textarea>
+      <label for="interes">Cuéntanos sobre tu interés o experiencia en esta tutoría (Máximo 400 caracteres):</label>
+      <textarea id="interes" rows="3" maxlength="400" placeholder="Escribe brevemente por qué deseas apoyar..." oninput="actualizarContador()"></textarea>
       <div class="char-counter"><span id="counter">0</span> / 400 caracteres</div>
     </div>
 
     <div class="checkbox-group">
       <input type="checkbox" id="autorizacion" required>
-      <label for="autorizacion">Acepto el tratamiento de mis datos personales para fines de gestion de tutores (Obligatorio).</label>
+      <label for="autorizacion">Acepto el tratamiento de mis datos personales para fines de gestión de tutores (Obligatorio).</label>
     </div>
 
     <div class="btn-container">
-      <button class="secondary" onclick="window.location.href='index.html'">Volver a la pagina principal</button>
-      <button onclick="enviarTutor()">Enviar</button>
+      <button class="secondary" onclick="window.location.href='index.html'">Volver a la página principal</button>
+      <button class="btn-green" onclick="enviarTutor()">Enviar</button>
     </div>
   </div>
 
-  <div class="card" id="thanks-container" style="display:none; text-align: center;">
+  <div class="card" id="thanks-container" style="display:none; text-align: left;">
+    <div class="pre-title pre-title-green">—— GRACIAS</div>
     <h2>Respuesta enviada</h2>
-    <p>Te agradecemos tu interes en ser tutor voluntario. Tus datos se han registrado con exito.</p>
+    <p>Te agradecemos tu interés en ser tutor voluntario. Tus datos se han registrado con éxito.</p>
     <div class="btn-container">
       <button class="secondary" onclick="enviarOtro()">Enviar otra respuesta</button>
-      <button onclick="window.location.href='index.html'">Volver a la pagina principal</button>
+      <button class="btn-yellow" onclick="window.location.href='index.html'">Volver a la página principal</button>
     </div>
   </div>
 
