@@ -32,6 +32,11 @@ body.home {
 .home .hero h1 {
   font-size: 56px;
   line-height: 1.05;
+  margin-bottom: 0;
+}
+
+.home .hero .title-squares {
+  display: flex;
   margin-bottom: 24px;
 }
 
