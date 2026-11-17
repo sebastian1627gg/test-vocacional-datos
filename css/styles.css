@@ -251,7 +251,7 @@ button.btn-green,
 button.success {
   background-color: #2fb350 !important; /* Verde Python Colombia */
   color: #0d0d1a !important;
-  box-shadow: 5px 5px 0px 0px #86efac, 5px 5px 0px 2px #000000;
+  box-shadow: none;
 }
 
 button.btn-green:hover,
