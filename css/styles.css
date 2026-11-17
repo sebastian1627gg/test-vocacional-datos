@@ -229,21 +229,22 @@ button.btn-tutor,
 button:not(.btn-green) {
   background-color: #ffd43b !important; /* Amarillo Python */
   color: #0d0d1a !important;
-  box-shadow: 5px 5px 0px 0px #f58220, 5px 5px 0px 2px #000000;
+  border: none;
+  box-shadow: none;
 }
 
 button.btn-yellow:hover,
 button.btn-tutor:hover,
 button:not(.btn-green):hover {
   transform: translate(-3px, -3px);
-  box-shadow: 8px 8px 0px 0px #f58220, 8px 8px 0px 2px #000000;
+  box-shadow: 8px 8px 0px 0px #f58220;
 }
 
 button.btn-yellow:active,
 button.btn-tutor:active,
 button:not(.btn-green):active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px 0px #f58220, 2px 2px 0px 2px #000000;
+  box-shadow: 2px 2px 0px 0px #f58220;
 }
 
 /* --- BOTÓN VERDE (Capa verde claro debajo) --- */
@@ -251,19 +252,20 @@ button.btn-green,
 button.success {
   background-color: #2fb350 !important; /* Verde Python Colombia */
   color: #0d0d1a !important;
+  border: none;
   box-shadow: none;
 }
 
 button.btn-green:hover,
 button.success:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 8px 8px 0px 0px #86efac, 8px 8px 0px 2px #000000;
+  box-shadow: 8px 8px 0px 0px #86efac;
 }
 
 button.btn-green:active,
 button.success:active {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px 0px #86efac, 2px 2px 0px 2px #000000;
+  box-shadow: 2px 2px 0px 0px #86efac;
 }
 
 /* ==========================================================================
