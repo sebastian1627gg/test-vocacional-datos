@@ -37,7 +37,7 @@ body.home {
 
 .home .hero .title-squares {
   display: flex;
-  margin-bottom: 24px;
+  margin: 12px 0 24px;
 }
 
 .hero h1 .hl { color: var(--yellow); }
